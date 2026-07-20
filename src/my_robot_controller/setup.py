@@ -26,7 +26,9 @@ setup(
         'console_scripts': [
             'my_first_node = my_robot_controller.my_first_node:main',
             'robot_news_station = my_robot_controller.robot_news_station:main',
-            'smartphone = my_robot_controller.smartphone:main'
+            'smartphone = my_robot_controller.smartphone:main',
+            'car = my_robot_controller.car:main',
+            'traffic_light = my_robot_controller.traffic_light:main'
         ],
     },
 )
