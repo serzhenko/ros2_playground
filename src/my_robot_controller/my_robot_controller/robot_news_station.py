@@ -2,6 +2,7 @@
 
 import rclpy
 from rclpy.node import Node
+from random import randint
 from std_msgs.msg import String  # Импортируем тип сообщения
 
 
@@ -34,7 +35,9 @@ class RobotNewsStation(Node):
         """
         # Создаём сообщение
         msg = String()
-        msg.data = f'Новость #{self.counter}: Робот работает отлично!'
+        # msg.data = f'Новость #{self.counter}: Робот работает отлично!'
+        r = randint(0, 999)
+        msg.data = f'Случайное число: {r}'
         
         # Публикуем сообщение
         self.publisher_.publish(msg)
