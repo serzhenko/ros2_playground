@@ -47,7 +47,9 @@ class SystemMonitor(Node):
         Публикуем общий статус системы.
         """
         # Определяем статус на основе всех данных
-        if self.battery_level < 5.0:
+        if self.battery_level > 80.0 and self.is_moving:
+            status = "OPTIMAL - Full power available"
+        elif self.battery_level < 5.0:
             status = "CRITICAL - System shutdown imminent"
         elif self.battery_level < 20.0:
             status = f"WARNING - Low battery ({self.battery_level:.1f}%)"
