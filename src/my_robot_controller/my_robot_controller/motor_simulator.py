@@ -36,6 +36,14 @@ class MotorSimulator(Node):
             self.battery_callback,
             10
         )
+
+        # Subscriber для уровня батареи
+        self.distance_subscriber = self.create_subscription(
+            Float32,
+            '/distance',
+            self.distance_callback,
+            10
+        )
         
         # Publisher для состояния моторов
         self.state_publisher = self.create_publisher(
@@ -55,6 +63,18 @@ class MotorSimulator(Node):
         """
         self.battery_level = msg.data
     
+    def distance_callback(self, msg):
+        """
+        Получаем расстояние.
+        """
+        self.distance = msg.data
+        if self.distance <= 0.5:
+            self.current_speed = 0.0
+            self.current_angular = 0.0
+            self.is_moving = False
+            return
+
+
     def cmd_vel_callback(self, msg):
         """
         Получаем команды движения.

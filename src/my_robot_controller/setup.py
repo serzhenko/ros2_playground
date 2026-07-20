@@ -30,16 +30,11 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'my_first_node = my_robot_controller.my_first_node:main',
-            'robot_news_station = my_robot_controller.robot_news_station:main',
-            'smartphone = my_robot_controller.smartphone:main',
-            'car = my_robot_controller.car:main',
-            'traffic_light = my_robot_controller.traffic_light:main',
-            'battery_monitor = my_robot_controller.battery_monitor:main',
-            'battery_simulator = my_robot_controller.battery_simulator:main',
             'battery_node = my_robot_controller.battery_node:main',
             'motor_simulator = my_robot_controller.motor_simulator:main',
             'system_monitor = my_robot_controller.system_monitor:main',
+            'distance_sensor = my_robot_controller.distance_sensor:main',
+            'temperature_sensor = my_robot_controller.temperature_sensor:main'
         ],
     },
 )

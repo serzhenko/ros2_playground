@@ -30,4 +30,18 @@ def generate_launch_description():
             name='system_monitor',
             output='screen'
         ),
+        # Узел датчика расстояния
+        Node(
+            package='my_robot_controller',
+            executable='distance_sensor',
+            name='distance_sensor',
+            output='screen'
+        ),
+        # Узел датчика температуры
+        Node(
+            package='my_robot_controller',
+            executable='temperature_sensor',
+            name='temperature_sensor',
+            output='screen'
+        ),
     ])
