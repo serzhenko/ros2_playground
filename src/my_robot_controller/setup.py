@@ -28,7 +28,9 @@ setup(
             'robot_news_station = my_robot_controller.robot_news_station:main',
             'smartphone = my_robot_controller.smartphone:main',
             'car = my_robot_controller.car:main',
-            'traffic_light = my_robot_controller.traffic_light:main'
+            'traffic_light = my_robot_controller.traffic_light:main',
+            'battery_monitor = my_robot_controller.battery_monitor:main',
+            'battery_simulator = my_robot_controller.battery_simulator:main'
         ],
     },
 )
